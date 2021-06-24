@@ -3,23 +3,19 @@ server:
 
 spring:
   application:
-    name: user-service
+    name: order-service
   h2:
     console:
       enabled: true
       settings:
         web-allow-others: true
-#  jpa:
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL57Dialect
-#        storage_engine: innodb
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+#    generate-ddl: true
   datasource:
     url: jdbc:h2:mem:testdb
-#  datasource:
-#    url: jdbc:h2:mem:testdb;MODE=MYSQL
-#    username: sa
 
 eureka:
   instance:
@@ -29,6 +25,6 @@ eureka:
     fetch-registry: true # 외부 검색 가능
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
-
-greeting:
-  message: Welcome to the Simple E-commerce.
+logging:
+  level:
+    com.example.orderservice: DEBUG
