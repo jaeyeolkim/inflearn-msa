@@ -21,7 +21,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/user-service")
+//@RequestMapping("/user-service")
 public class UserController {
     private final Environment env;
     private final Greeting greeting;
