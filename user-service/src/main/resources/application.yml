@@ -21,6 +21,13 @@ spring:
 #    url: jdbc:h2:mem:testdb;MODE=MYSQL
 #    username: sa
 
+# rabbitmq server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # random port 사용시 eureka server에 인스턴스가 각각 표시되지 않는다
@@ -43,4 +50,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans
+        include: refresh, health, beans, busrefresh

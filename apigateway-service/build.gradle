@@ -28,6 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator' // config 정보 재부팅 없이 읽어오기
     implementation 'org.springframework.cloud:spring-cloud-starter-config' // config
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap' // config
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'  // bus
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     compileOnly 'org.projectlombok:lombok'

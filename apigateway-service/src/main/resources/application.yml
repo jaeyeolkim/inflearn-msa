@@ -93,6 +93,13 @@ spring:
             preLogger: true
             postLogger: false
 
+  # rabbitmq server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 # user service와 동일한 이름의 jwt token
 token:
   secret: user_token
@@ -100,4 +107,4 @@ management:
   endpoints:
     jmx:
       exposure:
-        include: refresh, health, beans, httptrace
+        include: refresh, health, beans, httptrace, busrefresh
