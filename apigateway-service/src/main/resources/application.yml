@@ -39,6 +39,14 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/actuator/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 #        - id: user-service
 #          uri: lb://USER-SERVICE
 #          predicates:
@@ -88,3 +96,8 @@ spring:
 # user service와 동일한 이름의 jwt token
 token:
   secret: user_token
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: refresh, health, beans, httptrace
